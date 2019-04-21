@@ -1,0 +1,70 @@
+{
+  "orgList": {
+    "resources": [{
+      "guid": "c55e4bd7-50fa-4e39-ab0b-4038248df239",
+      "name": "ENG-FoundationCore",
+      "relationships": null
+    }, {
+      "guid": "3fb242b3-8b25-4b3c-943b-29ceec3cecaa",
+      "name": "HSDP-Logging",
+      "relationships": null
+    }, {
+      "guid": "92fed012-5d53-4c9f-9df3-9bfa616c00ca",
+      "name": "HSDP-Auditing",
+      "relationships": null
+    }]
+  },
+  "spaceList": {
+    "resources": [{
+      "guid": "a361e4df-3ac5-43d0-a889-b1e91a9043e4",
+      "name": "perf",
+      "relationships": {
+        "organization": {
+          "data": {
+            "guid": "c55e4bd7-50fa-4e39-ab0b-4038248df239"
+          }
+        }
+      }
+    }, {
+      "guid": "328d99a7-7807-483f-ae0e-c83ed7fa76f2",
+      "name": "devteam",
+      "relationships": {
+        "organization": {
+          "data": {
+            "guid": "c55e4bd7-50fa-4e39-ab0b-4038248df239"
+          }
+        }
+      }
+    }, {
+      "guid": "76ea25f4-82c7-4b02-8016-3a52a9c52ff9",
+      "name": "development",
+      "relationships": {
+        "organization": {
+          "data": {
+            "guid": "3fb242b3-8b25-4b3c-943b-29ceec3cecaa"
+          }
+        }
+      }
+    }, {
+      "guid": "74021495-8a9c-4b71-bb54-a7cb17280f11",
+      "name": "dev-logging",
+      "relationships": {
+        "organization": {
+          "data": {
+            "guid": "3fb242b3-8b25-4b3c-943b-29ceec3cecaa"
+          }
+        }
+      }
+    }, {
+      "guid": "35f71666-5f28-4429-a0b6-ade68bfa260c",
+      "name": "dev-only",
+      "relationships": {
+        "organization": {
+          "data": {
+            "guid": "92fed012-5d53-4c9f-9df3-9bfa616c00ca"
+          }
+        }
+      }
+    }]
+  }
+}

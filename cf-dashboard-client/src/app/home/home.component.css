@@ -1,0 +1,10 @@
+.top-buffer {
+  padding-top: 4em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-bottom: 4em;
+}
+.column-buffer {
+  padding-top: 1em;
+}
+.font-size-sm { font-size: .9rem; }
