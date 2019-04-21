@@ -4,8 +4,7 @@
       <div class="card card-signin my-5">
         <div class="card-body">
           <h5 class="card-title text-center">CF Login</h5>
-          <form
-            novalidate
+          <form (ngSubmit)="onSubmit()"
             class="form-signin"
             #f="ngForm"
             [formGroup]="myForm"
