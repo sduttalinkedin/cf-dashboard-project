@@ -55,8 +55,9 @@
               </div>
             </div>
             <button
-              class="btn btn-lg btn-primary btn-block text-uppercase"
               type="submit"
+              [disabled]="myForm.pristine || myForm.invalid"
+              class="btn btn-lg btn-primary btn-block text-uppercase"
             >
               Sign In
             </button>
