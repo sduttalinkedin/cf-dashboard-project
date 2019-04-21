@@ -14,13 +14,15 @@ import {
   styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
-  private services : any;
-  constructor(private httpClient: HttpClient) {}
+  private services: any;
+  constructor(private httpClient: HttpClient) {
+    this.httpClient = httpClient;
+  }
 
   ngOnInit() {
     const headers = new HttpHeaders().set(
       "Authorization",
-      "bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vdWFhLmNsb3VkLnBjZnRlc3QuY29tL3Rva2VuX2tleXMiLCJraWQiOiJrZXktMSIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI2MGYyZjZmOGI4N2M0M2U5YTFjNzA0ZDQwNmJlN2Q1OCIsInN1YiI6IjM4Y2M1ZWQ2LTY3YWEtNDQyNC04MjBkLTNlYWZjYjE1ZjFjMiIsInNjb3BlIjpbImNsb3VkX2NvbnRyb2xsZXIucmVhZCIsInBhc3N3b3JkLndyaXRlIiwiY2xvdWRfY29udHJvbGxlci53cml0ZSIsIm9wZW5pZCIsInVhYS51c2VyIl0sImNsaWVudF9pZCI6ImNmIiwiY2lkIjoiY2YiLCJhenAiOiJjZiIsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInVzZXJfaWQiOiIzOGNjNWVkNi02N2FhLTQ0MjQtODIwZC0zZWFmY2IxNWYxYzIiLCJvcmlnaW4iOiJsZGFwIiwidXNlcl9uYW1lIjoic2R1dHRhIiwiZW1haWwiOiJzdXNoYW50YS5kdXR0YUBwaGlsaXBzLmNvbSIsImF1dGhfdGltZSI6MTU1NTg0NTMwMCwicmV2X3NpZyI6IjE4ZDhhNGI1IiwiaWF0IjoxNTU1ODQ5NzE5LCJleHAiOjE1NTU4NTAzMTksImlzcyI6Imh0dHBzOi8vdWFhLmNsb3VkLnBjZnRlc3QuY29tL29hdXRoL3Rva2VuIiwiemlkIjoidWFhIiwiYXVkIjpbImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCIsImNmIiwidWFhIiwib3BlbmlkIl19.rh284dam5qIVcAU8XRduWzNjm203TWP_KYPFGZ4w_DRth913kJw21gQnPhh0SEER20maWlG71YWs-UTip1B0foLO94pZ8Oa9EvcHjra1hlClcHZbZM687-eexr8q19VPzNdascSKi4WZtjCiI2EbnfRDvk0jdb0Yidpwa8wl5H2Lxoklhx4jA8o34Ib6m4fVa1PEYsbDbXl4Dg4L3f2KzDHi99KIbQAhU-W5U2X8o4Cwyopz_XaesQ-DPC6P4g7yTC--FTxUt1tSZnLryD3B_I18wkA1jUiSEBXAUlnK8Dhd_KiCck4Y48Mbe1JOudYBfdhow7SKVjnPAclyuOZzvg"
+      "bearer eyJhbGciOiJSUzI1NiIsImprdSI6Imh0dHBzOi8vdWFhLmNsb3VkLnBjZnRlc3QuY29tL3Rva2VuX2tleXMiLCJraWQiOiJrZXktMSIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI4NzIwM2JiZWJjOTc0OGJlYmMzMmZmMWZkMDhkZmM5YiIsInN1YiI6IjM4Y2M1ZWQ2LTY3YWEtNDQyNC04MjBkLTNlYWZjYjE1ZjFjMiIsInNjb3BlIjpbImNsb3VkX2NvbnRyb2xsZXIucmVhZCIsInBhc3N3b3JkLndyaXRlIiwiY2xvdWRfY29udHJvbGxlci53cml0ZSIsIm9wZW5pZCIsInVhYS51c2VyIl0sImNsaWVudF9pZCI6ImNmIiwiY2lkIjoiY2YiLCJhenAiOiJjZiIsImdyYW50X3R5cGUiOiJwYXNzd29yZCIsInVzZXJfaWQiOiIzOGNjNWVkNi02N2FhLTQ0MjQtODIwZC0zZWFmY2IxNWYxYzIiLCJvcmlnaW4iOiJsZGFwIiwidXNlcl9uYW1lIjoic2R1dHRhIiwiZW1haWwiOiJzdXNoYW50YS5kdXR0YUBwaGlsaXBzLmNvbSIsImF1dGhfdGltZSI6MTU1NTc0ODg5MSwicmV2X3NpZyI6IjE4ZDhhNGI1IiwiaWF0IjoxNTU1ODU4NDc2LCJleHAiOjE1NTU4NTkwNzYsImlzcyI6Imh0dHBzOi8vdWFhLmNsb3VkLnBjZnRlc3QuY29tL29hdXRoL3Rva2VuIiwiemlkIjoidWFhIiwiYXVkIjpbImNsb3VkX2NvbnRyb2xsZXIiLCJwYXNzd29yZCIsImNmIiwidWFhIiwib3BlbmlkIl19.dOIMRwRjOqbY-ElREJPnC1H2J2rgLRsflAsOtg73tRzI40BZ8Fcb1S4IBkRnJX7O8m8t7mHM4fIgQ8Bv6F9U-Ld4CqxTfBzpnCTi5-GO1e4GyUebSduMNHbZ7PPIqyOWm6vbO_Pa3Kkz-Vx5qrAXO0HYCzYwmR7b_IiYzoZhhO0RmWAQxoXEUlzIvRTWifa7mabHrAhx7AQNbHdtjrzTa-lNw8W70CVXhPwW2-NEA2AeYlRiDLV45n9tJkF_uGf8nPS4xAZ-VXuLsbsLfHz2Jy_MfWtxFmGV_pLtBz5tzO7nBsvN9d31JavQzEdk8YcWObwIJU_3diDOMaJssVIcTg"
     );
     // Initialize Params Object
     let params = new HttpParams();
@@ -36,17 +38,23 @@ export class HomeComponent implements OnInit {
       params: params
     };
 
+    // this.httpClient
+    //   .get<any>("http://localhost:8080/cfdashboard/services/", httpOptions)
+    //   .subscribe(
+    //     res => {
+    //       console.log(res['body'].resources);
+    //       this.services = res['body'].resources;
+    //     },
+    //     (err: HttpErrorResponse) => {
+    //       console.log(err.message);
+    //     }
+    //   );
     this.httpClient
-      .get<any>("http://localhost:8080/cfdashboard/services/", httpOptions)
-      .subscribe(
-        res => {
-          console.log(res['body'].resources);
-          this.services = res['body'].resources;
-            
-        },
-        (err: HttpErrorResponse) => {
-          console.log(err.message);
-        }
-      );
+      .get("../../../assets/mockjson/services.json")
+      .subscribe(data => {
+        this.services = data['resources'];
+        console.log(this.services)
+      });
+
   }
 }

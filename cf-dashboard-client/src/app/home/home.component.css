@@ -11,3 +11,9 @@
   font-size: .7rem; 
   font-weight:bold
 }
+a {
+  line-height: 1em;
+  display: inline-block;
+  text-decoration: none;
+  margin: .2em;
+}

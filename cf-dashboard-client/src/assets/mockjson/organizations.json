@@ -1,0 +1,42 @@
+{
+    "organizations": [
+        {
+            "name": "ENG-FoundationCore",
+            "guid": "c55e4bd7-50fa-4e39-ab0b-4038248df239",
+            "spaces": [
+                {
+                    "name": "perf",
+                    "guid": "a361e4df-3ac5-43d0-a889-b1e91a9043e4"
+                },
+                {
+                    "name": "devteam",
+                    "guid": "328d99a7-7807-483f-ae0e-c83ed7fa76f2"
+                }
+            ]
+        },
+        {
+            "name": "HSDP-Logging",
+            "guid": "3fb242b3-8b25-4b3c-943b-29ceec3cecaa",
+            "spaces": [
+                {
+                    "name": "development",
+                    "guid": "76ea25f4-82c7-4b02-8016-3a52a9c52ff9"
+                },
+                {
+                    "name": "dev-logging",
+                    "guid": "74021495-8a9c-4b71-bb54-a7cb17280f11"
+                }
+            ]
+        },
+        {
+            "name": "HSDP-Auditing",
+            "guid": "92fed012-5d53-4c9f-9df3-9bfa616c00ca",
+            "spaces": [
+                {
+                    "name": "dev-only",
+                    "guid": "35f71666-5f28-4429-a0b6-ade68bfa260c"
+                }
+            ]
+        }
+    ]
+}

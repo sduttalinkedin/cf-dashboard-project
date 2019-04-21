@@ -6,13 +6,13 @@
           Service Name:- {{service.name }}<br/>
           Service GUID:- {{service.guid }}<br/>
         </h5>
-        <div class="card-body">
+        <div class="card-body bg-dark">
           <h5 class="card-title text-info font-size-sm"></h5>
-          <p class="card-text">
-            <!-- With supporting text below as a natural lead-in to additional -->
-            content.
+          <p class="card-text text-info font-size-sm">
+            Details of {{service.name | uppercase}}
           </p>
-          <!-- <a routerLink="#" class="btn btn-primary">Go somewhere</a> -->
+          <a routerLink="" class="btn btn-success .spacer">Delete</a>
+          <a routerLink="" class="btn btn-success .spacer">Show Details</a>
         </div>
       </div>
     </div>
