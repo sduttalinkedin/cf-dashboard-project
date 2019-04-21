@@ -24,8 +24,8 @@ public class CfDashBoardApplicationTests {
     @Test
     public void doLogin() throws Exception {
         Login login = new Login();
-        login.setPassword("Welcome@1234%");
-        login.setUserName("sdutta");
+        login.setPassword("testPasswd");
+        login.setUserName("testUser");
         StopWatch stopWatch = new StopWatch();
         stopWatch.start();
         mvc.perform(MockMvcRequestBuilders
